@@ -1,0 +1,12 @@
+# https://github.com/quipper/comment-failure-action
+on:
+  workflow_run:
+    workflows:
+      - pytest
+    types: [ completed ]
+
+jobs:
+  comment-failure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: quipper/comment-failure-action@v0.1.1
