@@ -46,5 +46,3 @@ jobs:
           name: aws-cdk-update-checker
           fail_ci_if_error: true
           verbose: true
-
-
