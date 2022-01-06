@@ -5,6 +5,11 @@ branding:
   icon: 'trending-up'
   color: 'green'
 
+outputs:
+  latest_version:
+    description: 'AWS CDK latest version'
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  entrypoint: 'entrypoint-github-actions.sh'
