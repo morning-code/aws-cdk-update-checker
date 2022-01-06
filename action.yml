@@ -12,4 +12,4 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  entrypoint: echo "::set-output name=latest_version::$(aws_cdk_update_checker)"
+  entrypoint: echo ::set-output name=latest_version::$(aws_cdk_update_checker)
