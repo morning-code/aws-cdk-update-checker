@@ -39,7 +39,3 @@ def test_smoke(capfd):
     result = main.fetch_aws_cdk_latest_version()
     assert isinstance(result, str)
     assert result.startswith('v')
-
-    out, err = capfd.readouterr()
-    assert out.startswith('v')
-    assert err is ''

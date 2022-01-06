@@ -7,8 +7,6 @@ def fetch_aws_cdk_latest_version():
 
     latest_version = all_releases[0]
 
-    print(latest_version)
-
     return latest_version
 
 

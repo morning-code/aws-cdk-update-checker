@@ -3,6 +3,7 @@ on:
   workflow_run:
     workflows:
       - pytest
+      - snyk
     types: [ completed ]
 
 jobs:
