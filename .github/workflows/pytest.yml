@@ -1,0 +1,44 @@
+name: pytest
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  pytest:
+    name: Run pytest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: [3.10]
+    steps:
+      # https://github.com/actions/setup-python
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: x64
+      # https://python-poetry.org/docs/#installation
+      - name: Install Poetry
+        run: |
+          curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+      - name: Set Poetry PATH
+        run: echo "$HOME/.poetry/bin" >> $GITHUB_PATH
+      - name: Run pytest
+        run: ./run_test.sh
+      # https://github.com/codecov/codecov-action
+      - name: Upload coverage report to Codecov
+        if: ${{ matrix.python-version == 3.10 }}
+        uses: codecov/codecov-action@v2
+        with:
+          files: ./coverage.xml
+          flags: unittests
+          name: aws-cdk-update-checker
+          fail_ci_if_error: true
+          verbose: true
+
+
