@@ -4,4 +4,4 @@ RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install aws-cdk-update-checker
 
-ENTRYPOINT ["sh", "-c", "aws_cdk_update_-checker"]
+ENTRYPOINT ["sh", "-c", "aws_cdk_update_checker"]
