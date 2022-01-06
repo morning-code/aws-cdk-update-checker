@@ -42,7 +42,7 @@ jobs:
             --cov-report=xml
       # https://github.com/codecov/codecov-action
       - name: Upload coverage report to Codecov
-        if: ${{ matrix.python-version == 3.10 }}
+        if: ${{ matrix.python-version == 3.9 }}
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
