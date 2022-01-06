@@ -1,5 +1,5 @@
 # https://github.com/snyk/actions
-name: Check vulnerability by Snyk
+name: snyk
 on:
   push:
     branches:
