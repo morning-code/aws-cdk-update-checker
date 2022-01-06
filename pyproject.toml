@@ -10,10 +10,12 @@ requests = "^2.27.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+pytest-mock = "^3.6.1"
+pytest-cov = "^3.0.0"
 
 [tool.poetry.scripts]
-aws_cdk_update_checker = "aws_cdk_update_checker.main:main"
-acuc = "aws_cdk_update_checker.main:main"
+aws_cdk_update_checker = "aws_cdk_update_checker.main:fetch_aws_cdk_latest_version"
+acuc = "aws_cdk_update_checker.main:fetch_aws_cdk_latest_version"
 
 [build-system]
 requires = ["poetry>=0.12"]
