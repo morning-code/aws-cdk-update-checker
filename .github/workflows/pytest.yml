@@ -15,7 +15,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        python-version: [3.10]
+        python-version: [3.9]
     steps:
       # https://github.com/actions/setup-python
       - name: Checkout
