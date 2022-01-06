@@ -1,0 +1,10 @@
+name: AWS CDK update check action
+description: Check AWS CDK latest version and create Pull Request
+author: morning-code
+branding:
+  icon: 'trending-up'
+  color: 'green'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
