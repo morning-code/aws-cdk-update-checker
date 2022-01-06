@@ -34,12 +34,7 @@ jobs:
       - name: Install python packages by Poetry
         run: poetry install --no-interaction
       - name: Run pytest
-        run: |
-          poetry run pytest \
-            -v ./tests/* \
-            --cov=aws_cdk_update_checker \
-            --cov-branch \
-            --cov-report=xml
+        run: ./run_test.sh
       # https://github.com/codecov/codecov-action
       - name: Upload coverage report to Codecov
         if: ${{ matrix.python-version == 3.9 }}
@@ -51,5 +46,3 @@ jobs:
           name: aws-cdk-update-checker
           fail_ci_if_error: true
           verbose: true
-
-
