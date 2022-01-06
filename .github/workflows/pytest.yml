@@ -45,6 +45,7 @@ jobs:
         if: ${{ matrix.python-version == 3.10 }}
         uses: codecov/codecov-action@v2
         with:
+          token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage.xml
           flags: unittests
           name: aws-cdk-update-checker
